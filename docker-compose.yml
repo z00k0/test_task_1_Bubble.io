@@ -12,3 +12,10 @@ services:
       - DEBUG=1
       - DJANGO_TOKEN=${DJANGO_TOKEN}
     command: python manage.py runserver 0.0.0.0:8000
+  migration:
+    image: web
+    command: python manage.py migrate --noinput
+    volumes:
+      - .:/app
+    depends_on:
+      - web

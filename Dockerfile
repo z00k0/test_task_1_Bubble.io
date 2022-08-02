@@ -18,5 +18,3 @@ RUN pip install -r requirements.txt
 COPY . /app/
 WORKDIR /app/project/
 
-# run migrations
-CMD python manage.py migrate
